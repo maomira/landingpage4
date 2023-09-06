@@ -1,3 +1,5 @@
+/* styles.css */
+
 body {
     margin: 0;
     padding: 0;
@@ -41,3 +43,19 @@ body {
     height: auto;
     z-index: -1;
 }
+
+/* Add styles for the quotes container and individual quotes */
+.quote-container {
+    position: relative;
+}
+
+.quote {
+    position: absolute;
+    opacity: 0;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Add more specific styles for quotes if needed */
+
