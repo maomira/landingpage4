@@ -23,19 +23,3 @@ window.addEventListener("load", function () {
     positionQuotes();
 });
 
-// Function to handle animations
-function handleAnimations() {
-    const quotes = document.querySelectorAll(".quote");
-
-    quotes.forEach(function (quote) {
-        quote.addEventListener("animationiteration", function () {
-            // Toggle the opacity when the animation iteration completes
-            quote.style.opacity = quote.style.opacity === "0" ? "1" : "0";
-        });
-    });
-}
-
-// Call the handleAnimations function when the page loads
-window.addEventListener("load", function () {
-    handleAnimations();
-});
