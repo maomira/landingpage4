@@ -50,42 +50,11 @@ body {
 }
 
 .quote {
-    position: absolute;
-    opacity: 0;
     display: inline-block;
     font-size: 20px;
     font-weight: bold;
-    color: black; /* Set the text color to black for visibility */
+    color: black; /* Set the text color to black for visibility on white background */
 }
 
 /* Add more specific styles for quotes if needed */
 
-/* Keyframes for fade-in and fade-out animations */
-@keyframes fade-in-out-1 {
-    0%, 100% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-@keyframes fade-in-out-2 {
-    0%, 100% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-@keyframes fade-in-out-3 {
-    0%, 100% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-/* Add keyframes for more animations */
