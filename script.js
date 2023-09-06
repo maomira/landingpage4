@@ -1,25 +1,19 @@
 // script.js
 
-// Function to generate a random number within a range
-function getRandomNumber(min, max) {
-    return Math.random() * (max - min) + min;
-}
+// Function to handle parallax scrolling effect
+function parallaxScroll() {
+    const parallaxSections = document.querySelectorAll(".parallax");
 
-// Function to randomly position quotes within the white section
-function positionQuotes() {
-    const quotes = document.querySelectorAll(".quote");
-
-    quotes.forEach(function (quote) {
-        const randomX = getRandomNumber(10, 90); // Adjust the range for horizontal placement
-        const randomY = getRandomNumber(10, 90); // Adjust the range for vertical placement
-
-        quote.style.left = `${randomX}%`;
-        quote.style.top = `${randomY}%`;
+    window.addEventListener("scroll", function () {
+        parallaxSections.forEach(function (section) {
+            const speed = parseFloat(section.getAttribute("data-speed"));
+            const yOffset = window.pageYOffset;
+            section.querySelector(".background-image").style.transform = `translateY(${yOffset * speed}px)`;
+        });
     });
 }
 
-// Call the positionQuotes function when the page loads
+// Call the parallaxScroll function when the page loads
 window.addEventListener("load", function () {
-    positionQuotes();
+    parallaxScroll();
 });
-
