@@ -11,6 +11,9 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .background-image {
@@ -39,10 +42,6 @@ body {
 }
 
 .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
     text-align: center;
     color: black; /* Text color for Section 3 */
 }
