@@ -58,7 +58,7 @@ body {
 
 /* Add more specific styles for quotes if needed */
 
-/* Style for white text on black background */
-.white-text {
+/* Style for black text on white background */
+.black-text {
     color: black;
 }
