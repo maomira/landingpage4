@@ -8,7 +8,8 @@ function parallaxScroll() {
         parallaxSections.forEach(function (section) {
             const speed = parseFloat(section.getAttribute("data-speed"));
             const yOffset = window.pageYOffset;
-            section.querySelector(".background-image").style.transform = `translateY(${yOffset * speed}px)`;
+            const translateValue = yOffset * speed;
+            section.querySelector(".background-image").style.transform = `translateY(${translateValue}px)`;
         });
     });
 }
@@ -17,3 +18,4 @@ function parallaxScroll() {
 window.addEventListener("load", function () {
     parallaxScroll();
 });
+
