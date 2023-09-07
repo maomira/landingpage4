@@ -13,7 +13,11 @@ function scrollToSection(direction) {
             currentSection = (currentSection - 1 + sections.length) % sections.length;
         }
         sections[currentSection].scrollIntoView({ behavior: "smooth" });
-        isScrolling = false;
+        
+        // Add a delay (e.g., 200 milliseconds) before resetting isScrolling
+        setTimeout(() => {
+            isScrolling = false;
+        }, 200);
     }
 }
 
