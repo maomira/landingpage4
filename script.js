@@ -1,8 +1,9 @@
-// script.js
-
 const sections = document.querySelectorAll(".section");
 let currentSection = 0;
 let isScrolling = false;
+
+// Disable manual scrolling by setting overflow-y to hidden
+document.body.style.overflowY = "hidden";
 
 function scrollToSection(direction) {
     if (!isScrolling) {
@@ -13,13 +14,17 @@ function scrollToSection(direction) {
             currentSection = (currentSection - 1 + sections.length) % sections.length;
         }
         sections[currentSection].scrollIntoView({ behavior: "smooth" });
-        
-        // Add a delay (e.g., 200 milliseconds) before resetting isScrolling
-        setTimeout(() => {
-            isScrolling = false;
-        }, 200);
     }
 }
+
+// Function to scroll to the next section automatically
+function scrollToNextSection() {
+    currentSection = (currentSection + 1) % sections.length;
+    sections[currentSection].scrollIntoView({ behavior: "smooth" });
+}
+
+// Set an interval to trigger automatic scrolling (adjust the interval as needed)
+setInterval(scrollToNextSection, 5000); // Scroll to next section every 5 seconds
 
 document.addEventListener("keydown", (e) => {
     if ((e.key === "ArrowDown" || e.key === "ArrowUp") && !isScrolling) {
@@ -34,14 +39,11 @@ document.addEventListener("keydown", (e) => {
 
 document.addEventListener("wheel", (e) => {
     if (!isScrolling) {
-        console.log("Mousewheel event detected.");
         isScrolling = true;
         e.preventDefault(); // Prevent default mouse wheel behavior
         if (e.deltaY > 0) {
-            console.log("Scrolling down detected.");
             scrollToSection("next"); // Scroll to the next section
         } else {
-            console.log("Scrolling up detected.");
             scrollToSection("prev"); // Scroll to the previous section
         }
     }
