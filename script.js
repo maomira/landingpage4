@@ -27,7 +27,7 @@ function scrollToPrevSection() {
 }
 
 // Set an interval to trigger automatic scrolling (adjust the interval as needed)
-setInterval(scrollToNextSection, 5000); // Scroll to next section every 5 seconds
+setInterval(scrollToNextSection, 50000); // Scroll to next section every 5 seconds
 
 document.addEventListener("keydown", (e) => {
     if (!e.repeat) {
