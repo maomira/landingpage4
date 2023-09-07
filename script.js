@@ -4,16 +4,6 @@ let currentSection = 0;
 // Disable manual scrolling by setting overflow-y to hidden
 document.body.style.overflowY = "hidden";
 
-// Function to scroll to a specific section
-function scrollToSection(index) {
-    const section = sections[index];
-    const offsetTop = section.offsetTop;
-    window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth"
-    });
-}
-
 document.addEventListener("keydown", (e) => {
     if (!e.repeat) {
         if (e.key === "ArrowDown") {
@@ -32,3 +22,16 @@ document.addEventListener("wheel", (e) => {
         scrollToSection((currentSection - 1 + sections.length) % sections.length); // Scroll to the previous section
     }
 });
+
+// Function to scroll to a specific section
+function scrollToSection(index) {
+    const section = sections[index];
+    const offsetTop = section.offsetTop;
+    window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth"
+    });
+}
+
+// Set an interval to trigger automatic scrolling every hour (adjust the interval as needed)
+setInterval(scrollToNextSection, 3600000); // Scroll to next section every hour (3600000 milliseconds)
