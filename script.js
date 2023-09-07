@@ -35,9 +35,5 @@ document.addEventListener("wheel", (e) => {
         } else {
             currentSection = (currentSection - 1 + sections.length) % sections.length;
         }
-        scrollToSection(currentSection);
-        setTimeout(() => {
-            isScrolling = false;
-        }, 1000); // Adjust the delay as needed to match the scroll duration
     }
 });
