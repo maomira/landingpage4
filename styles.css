@@ -3,7 +3,8 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Disable scrolling for now */
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
 }
 
 .section {
@@ -20,4 +21,24 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+}
+
+/* Show a scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Style for the scrollbar track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Style for the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Style for the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
