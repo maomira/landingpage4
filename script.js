@@ -10,7 +10,7 @@ function scrollToSection(index) {
         sections[index].scrollIntoView({ behavior: "smooth" });
         setTimeout(() => {
             isScrolling = false;
-        }, 0); // Remove the delay
+        }, 1000); // Adjust the delay as needed to match the scroll duration
     }
 }
 
@@ -37,6 +37,6 @@ document.addEventListener("wheel", (e) => {
         scrollToSection(currentSection);
         setTimeout(() => {
             isScrolling = false;
-        }, 0); // Remove the delay
+        }, 1000); // Adjust the delay as needed to match the scroll duration
     }
 });
