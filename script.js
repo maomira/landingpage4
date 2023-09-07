@@ -27,11 +27,10 @@ document.addEventListener("keydown", (e) => {
 });
 
 document.addEventListener("wheel", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default mouse wheel behavior
     if (!isScrolling) {
         isScrolling = true;
-        const scrollDirection = e.deltaY > 0 ? 1 : -1;
-        if (scrollDirection > 0) {
+        if (e.deltaY > 0) {
             currentSection = (currentSection + 1) % sections.length;
         } else {
             currentSection = (currentSection - 1 + sections.length) % sections.length;
