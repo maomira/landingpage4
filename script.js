@@ -1,9 +1,16 @@
 // script.js
 
 const sections = document.querySelectorAll(".section");
+let scrolling = false;
 
 function scrollToSection(index) {
-    sections[index].scrollIntoView({ behavior: "smooth" });
+    if (!scrolling) {
+        scrolling = true;
+        sections[index].scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => {
+            scrolling = false;
+        }, 1000); // Adjust the delay as needed to match the scroll duration
+    }
 }
 
 document.addEventListener("keydown", (e) => {
