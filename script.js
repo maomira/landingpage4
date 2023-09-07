@@ -34,11 +34,14 @@ document.addEventListener("keydown", (e) => {
 
 document.addEventListener("wheel", (e) => {
     if (!isScrolling) {
+        console.log("Mousewheel event detected.");
         isScrolling = true;
         e.preventDefault(); // Prevent default mouse wheel behavior
         if (e.deltaY > 0) {
+            console.log("Scrolling down detected.");
             scrollToSection("next"); // Scroll to the next section
         } else {
+            console.log("Scrolling up detected.");
             scrollToSection("prev"); // Scroll to the previous section
         }
     }
