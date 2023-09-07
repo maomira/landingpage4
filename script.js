@@ -8,9 +8,7 @@ function scrollToSection(index) {
     if (!isScrolling) {
         isScrolling = true;
         sections[index].scrollIntoView({ behavior: "smooth" });
-        setTimeout(() => {
-            isScrolling = false;
-        }, 1000); // Adjust the delay as needed to match the scroll duration
+        // Remove the setTimeout block to make scrolling responsive
     }
 }
 
