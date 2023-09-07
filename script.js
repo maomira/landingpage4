@@ -15,16 +15,14 @@ function scrollToSection(index) {
 }
 
 document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+    if ((e.key === "ArrowDown" || e.key === "ArrowUp") && !isScrolling) {
         e.preventDefault();
-        if (!isScrolling) {
-            if (e.key === "ArrowDown") {
-                currentSection = (currentSection + 1) % sections.length;
-            } else if (e.key === "ArrowUp") {
-                currentSection = (currentSection - 1 + sections.length) % sections.length;
-            }
-            scrollToSection(currentSection);
+        if (e.key === "ArrowDown") {
+            currentSection = (currentSection + 1) % sections.length;
+        } else if (e.key === "ArrowUp") {
+            currentSection = (currentSection - 1 + sections.length) % sections.length;
         }
+        scrollToSection(currentSection);
     }
 });
 
