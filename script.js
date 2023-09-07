@@ -21,11 +21,10 @@ document.addEventListener("keydown", (e) => {
     if ((e.key === "ArrowDown" || e.key === "ArrowUp") && !isScrolling) {
         e.preventDefault();
         if (e.key === "ArrowDown") {
-            currentSection = (currentSection + 1) % sections.length;
+            scrollToSection("next"); // Scroll to the next section
         } else if (e.key === "ArrowUp") {
-            currentSection = (currentSection - 1 + sections.length) % sections.length;
+            scrollToSection("prev"); // Scroll to the previous section
         }
-        scrollToSection(currentSection);
     }
 });
 
@@ -34,10 +33,9 @@ document.addEventListener("wheel", (e) => {
         isScrolling = true;
         e.preventDefault(); // Prevent default mouse wheel behavior
         if (e.deltaY > 0) {
-            currentSection = (currentSection + 1) % sections.length;
+            scrollToSection("next"); // Scroll to the next section
         } else {
-            currentSection = (currentSection - 1 + sections.length) % sections.length;
+            scrollToSection("prev"); // Scroll to the previous section
         }
-        scrollToSection(currentSection);
     }
 });
