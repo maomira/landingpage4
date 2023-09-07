@@ -8,7 +8,7 @@ function scrollToSection(index) {
     if (!isScrolling) {
         isScrolling = true;
         sections[index].scrollIntoView({ behavior: "smooth" });
-        // Remove the setTimeout block to make scrolling responsive
+        isScrolling = false; // Reset isScrolling immediately after triggering the scroll animation
     }
 }
 
@@ -33,5 +33,6 @@ document.addEventListener("wheel", (e) => {
         } else {
             currentSection = (currentSection - 1 + sections.length) % sections.length;
         }
+        scrollToSection(currentSection);
     }
 });
