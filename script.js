@@ -14,27 +14,12 @@ function scrollToSection(index) {
     });
 }
 
-// Function to scroll to the next section automatically
-function scrollToNextSection() {
-    currentSection = (currentSection + 1) % sections.length;
-    scrollToSection(currentSection);
-}
-
-// Function to scroll to the previous section automatically
-function scrollToPrevSection() {
-    currentSection = (currentSection - 1 + sections.length) % sections.length;
-    scrollToSection(currentSection);
-}
-
-// Set an interval to trigger automatic scrolling (adjust the interval as needed)
-setInterval(scrollToNextSection, 5000); // Scroll to next section every 5 seconds
-
 document.addEventListener("keydown", (e) => {
     if (!e.repeat) {
         if (e.key === "ArrowDown") {
-            scrollToNextSection(); // Scroll to the next section
+            scrollToSection((currentSection + 1) % sections.length); // Scroll to the next section
         } else if (e.key === "ArrowUp") {
-            scrollToPrevSection(); // Scroll to the previous section
+            scrollToSection((currentSection - 1 + sections.length) % sections.length); // Scroll to the previous section
         }
     }
 });
@@ -42,8 +27,8 @@ document.addEventListener("keydown", (e) => {
 document.addEventListener("wheel", (e) => {
     e.preventDefault(); // Prevent default mouse wheel behavior
     if (e.deltaY > 0) {
-        scrollToNextSection(); // Scroll to the next section
+        scrollToSection((currentSection + 1) % sections.length); // Scroll to the next section
     } else {
-        scrollToPrevSection(); // Scroll to the previous section
+        scrollToSection((currentSection - 1 + sections.length) % sections.length); // Scroll to the previous section
     }
 });
