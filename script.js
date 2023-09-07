@@ -7,28 +7,10 @@ let isScrolling = false;
 function scrollToSection(index) {
     if (!isScrolling) {
         isScrolling = true;
-        const targetScroll = sections[index].offsetTop;
-        const startScroll = window.pageYOffset;
-        const distance = targetScroll - startScroll;
-        const duration = 1000; // Adjust the scroll duration as needed
-
-        let startTime;
-
-        function scrollAnimation(timestamp) {
-            if (!startTime) startTime = timestamp;
-            const elapsed = timestamp - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-
-            window.scrollTo(0, startScroll + distance * progress);
-
-            if (progress < 1) {
-                requestAnimationFrame(scrollAnimation);
-            } else {
-                isScrolling = false;
-            }
-        }
-
-        requestAnimationFrame(scrollAnimation);
+        sections[index].scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => {
+            isScrolling = false;
+        }, 0); // Remove the delay
     }
 }
 
