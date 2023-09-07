@@ -27,9 +27,9 @@ document.addEventListener("keydown", (e) => {
 });
 
 document.addEventListener("wheel", (e) => {
-    e.preventDefault(); // Prevent default mouse wheel behavior
     if (!isScrolling) {
         isScrolling = true;
+        e.preventDefault(); // Prevent default mouse wheel behavior
         if (e.deltaY > 0) {
             currentSection = (currentSection + 1) % sections.length;
         } else {
