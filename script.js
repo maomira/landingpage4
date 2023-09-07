@@ -47,11 +47,8 @@ document.addEventListener("keydown", (e) => {
 document.addEventListener("wheel", (e) => {
     if (!isScrolling) {
         isScrolling = true;
-        if (e.deltaY > 0) {
-            currentSection = (currentSection + 1) % sections.length;
-        } else {
-            currentSection = (currentSection - 1 + sections.length) % sections.length;
-        }
+        const scrollDirection = e.deltaY > 0 ? 1 : -1;
+        currentSection = (currentSection + scrollDirection + sections.length) % sections.length;
         scrollToSection(currentSection);
     }
 });
