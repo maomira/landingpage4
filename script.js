@@ -1,21 +1,24 @@
 // script.js
 
-// Function to handle parallax scrolling effect
-function parallaxScroll() {
-    const parallaxSections = document.querySelectorAll(".parallax");
+const sections = document.querySelectorAll(".section");
 
-    window.addEventListener("scroll", function () {
-        parallaxSections.forEach(function (section) {
-            const speed = parseFloat(section.getAttribute("data-speed"));
-            const yOffset = window.pageYOffset;
-            const translateValue = yOffset * speed;
-            section.querySelector(".background-image").style.transform = `translateY(${translateValue}px)`;
-        });
-    });
+function scrollToSection(index) {
+    sections[index].scrollIntoView({ behavior: "smooth" });
 }
 
-// Call the parallaxScroll function when the page loads
-window.addEventListener("load", function () {
-    parallaxScroll();
+document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown") {
+        e.preventDefault();
+        const currentIndex = Array.from(sections).findIndex((section) => section.getBoundingClientRect().top >= 0);
+        const nextIndex = (currentIndex + 1) % sections.length;
+        scrollToSection(nextIndex);
+    }
 });
 
+document.addEventListener("wheel", (e) => {
+    if (e.deltaY > 0) {
+        const currentIndex = Array.from(sections).findIndex((section) => section.getBoundingClientRect().top >= 0);
+        const nextIndex = (currentIndex + 1) % sections.length;
+        scrollToSection(nextIndex);
+    }
+});
