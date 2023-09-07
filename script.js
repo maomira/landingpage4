@@ -4,11 +4,16 @@ const sections = document.querySelectorAll(".section");
 let currentSection = 0;
 let isScrolling = false;
 
-function scrollToSection(index) {
+function scrollToSection(direction) {
     if (!isScrolling) {
         isScrolling = true;
-        sections[index].scrollIntoView({ behavior: "smooth" });
-        isScrolling = false; // Reset isScrolling immediately after triggering the scroll animation
+        if (direction === "next") {
+            currentSection = (currentSection + 1) % sections.length;
+        } else if (direction === "prev") {
+            currentSection = (currentSection - 1 + sections.length) % sections.length;
+        }
+        sections[currentSection].scrollIntoView({ behavior: "smooth" });
+        isScrolling = false;
     }
 }
 
