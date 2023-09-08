@@ -5,7 +5,6 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     scroll-behavior: smooth; /* Smooth scrolling behavior */
-    overflow-y: scroll; /* Enable vertical scrollbar */
 }
 
 .section {
