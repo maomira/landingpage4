@@ -1,15 +1,20 @@
 /* styles.css */
 
-body {
+/* Reset margin and padding to zero for body and fullpage container */
+body, #fullpage {
     margin: 0;
     padding: 0;
+}
+
+body {
     font-family: Arial, sans-serif;
-    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    /* Remove scroll-behavior property to let fullPage.js handle scrolling */
 }
 
 .section {
     height: 100vh;
     position: relative;
+    /* You can keep overflow: hidden; to hide scrollbars */
     overflow: hidden;
 }
 
@@ -23,7 +28,7 @@ body {
     object-fit: cover;
     z-index: -1;
     
-    /* Set the desired opacity (e.g., 0.7 for 70% opacity) */
+    /* Set the desired opacity (e.g., 0.2 for 20% opacity) */
     opacity: 0.2;
 }
 
@@ -47,3 +52,4 @@ body {
     background: #555;
 }
 
+/* Adjust any other styles as needed to match your design */
