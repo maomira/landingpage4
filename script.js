@@ -14,18 +14,14 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-document.addEventListener("wheel", (e) => {
-    e.preventDefault(); // Prevent default mouse wheel behavior
-    if (e.deltaY > 0) {
-        scrollToSection((currentSection + 1) % sections.length); // Scroll to the next section
-    } else {
-        scrollToSection((currentSection - 1 + sections.length) % sections.length); // Scroll to the previous section
-    }
-});
-
-// Function to scroll to a specific section using scrollIntoView
+// Function to scroll to a specific section with custom animation
 function scrollToSection(index) {
     const section = sections[index];
-    section.scrollIntoView({ behavior: "smooth" });
+    const offsetTop = section.offsetTop;
+    
+    // Apply a custom scrolling animation with CSS transitions
+    document.body.style.transition = "transform 2s ease-in-out";
+    document.body.style.transform = `translateY(-${offsetTop}px)`;
+    
     currentSection = index;
 }
