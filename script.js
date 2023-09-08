@@ -24,28 +24,28 @@ document.addEventListener("wheel", (e) => {
         } else {
             scrollToSection("prev"); // Scroll to the previous section
         }
+        setTimeout(() => {
+            isScrolling = false;
+        }, 1000); // Adjust the delay as needed to match the scroll duration
     }
 });
 
-// Function to scroll to a specific section with custom animation
+// Function to scroll to a specific section using scrollIntoView
 function scrollToSection(direction) {
     if (!isScrolling) {
         isScrolling = true;
-        const section = sections[currentSection];
-        const offsetTop = section.offsetTop;
-        document.body.style.transition = "transform 0.5s ease-in-out";
-        document.body.style.transform = `translateY(-${offsetTop}px)`;
-
-        // Reset the transition when the transition ends
-        document.body.addEventListener("transitionend", () => {
-            document.body.style.transition = "";
-            isScrolling = false;
-        });
+        const nextSection = (currentSection + 1) % sections.length;
+        const prevSection = (currentSection - 1 + sections.length) % sections.length;
 
         if (direction === "next") {
-            currentSection = (currentSection + 1) % sections.length;
+            sections[nextSection].scrollIntoView({ behavior: "smooth" });
+            currentSection = nextSection;
         } else if (direction === "prev") {
-            currentSection = (currentSection - 1 + sections.length) % sections.length;
+            sections[prevSection].scrollIntoView({ behavior: "smooth" });
+            currentSection = prevSection;
         }
+        setTimeout(() => {
+            isScrolling = false;
+        }, 1000); // Adjust the delay as needed to match the scroll duration
     }
 }
