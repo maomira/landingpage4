@@ -8,9 +8,6 @@ document.body.style.overflowY = "hidden";
 function scrollToSection(index) {
     const section = sections[index];
     const offsetTop = section.offsetTop;
-    window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth"
     });
 }
 
@@ -26,8 +23,6 @@ function scrollToPrevSection() {
     scrollToSection(currentSection);
 }
 
-// Set an interval to trigger automatic scrolling (adjust the interval as needed)
-setInterval(scrollToNextSection, 50000); // Scroll to next section every 5 seconds
 
 document.addEventListener("keydown", (e) => {
     if (!e.repeat) {
