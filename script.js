@@ -20,8 +20,13 @@ function scrollToSection(index) {
     const offsetTop = section.offsetTop;
     
     // Apply a custom scrolling animation with CSS transitions
-    document.body.style.transition = "transform 2s ease-in-out";
+    document.body.style.transition = "transform 0.5s ease-in-out";
     document.body.style.transform = `translateY(-${offsetTop}px)`;
     
     currentSection = index;
 }
+
+// Reset the transition when the transition ends
+document.body.addEventListener("transitionend", () => {
+    document.body.style.transition = "";
+});
