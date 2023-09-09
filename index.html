@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="fullpage.min.css">
+    <link rel="stylesheet" href="hover-min.css"> <!-- Include Hover.css -->
     <style>
         /* Your custom CSS styles here */
         body {
@@ -36,6 +37,8 @@
             left: 50%;
             transform: translateX(-50%);
             cursor: pointer;
+            /* Apply Hover.css animation */
+            animation-duration: 2s; /* Adjust animation duration as needed */
         }
         .scroll-down-arrow::before {
             content: "";
@@ -54,7 +57,7 @@
                 <source src="video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="scroll-down-arrow"></div>
+            <div class="scroll-down-arrow hvr-bounce-to-bottom"></div> <!-- Apply Hover.css animation -->
         </div>
         <div class="section">
             <video class="background-video" autoplay loop muted>
