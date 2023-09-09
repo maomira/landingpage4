@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="fullpage.min.css">
+    <link rel="stylesheet" href="hover-min.css"> <!-- Add the Hover.css library -->
     <style>
         /* Your custom CSS styles here */
         body {
@@ -34,7 +35,7 @@
             position: absolute;
             bottom: 20px;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) scale(10); /* Make the button 10 times bigger */
             cursor: pointer;
             width: 50px;
             height: 50px;
@@ -43,27 +44,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.3s ease; /* Add a smooth transition */
         }
         .scroll-down-button a {
             display: block;
             width: 100%;
             height: 100%;
-        }
-
-        /* Updated arrow styling */
-        .scroll-down-button::before {
-            content: "";
-            border: solid #fff;
-            border-width: 0 2px 2px 0;
-            display: inline-block;
-            padding: 6px; /* Increase padding for a larger arrow */
-            transform: rotate(45deg);
-        }
-
-        /* Hover effect for the arrow */
-        .scroll-down-button:hover {
-            transform: translateX(-50%) scale(1.1); /* Scale up on hover */
         }
     </style>
 </head>
@@ -74,7 +59,7 @@
                 <source src="video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <a class="scroll-down-button" href="#section2"><span></span></a>
+            <a class="scroll-down-button hvr-icon-forward" href="#section2"><span></span></a>
         </div>
         <div class="section" data-anchor="section2">
             <video class="background-video" autoplay loop muted>
@@ -116,6 +101,11 @@
                     video3.play();
                 }
             },
+        });
+
+        document.querySelector(".scroll-down-button").addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent the default link behavior
+            fullpage_api.moveSectionDown(); // Scroll to the next section
         });
     </script>
 </body>
