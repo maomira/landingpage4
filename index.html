@@ -30,6 +30,22 @@
             z-index: -1;
             opacity: 0.7; /* Adjust opacity for better text readability */
         }
+        /* Custom animation for the second section */
+        .section2-animation {
+            animation: dropAnimation 1s ease forwards;
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        @keyframes dropAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -40,7 +56,7 @@
                 Your browser does not support the video tag.
             </video>
         </div>
-        <div class="section">
+        <div class="section section2-animation"> <!-- Apply the "section2-animation" class to the second section -->
             <video class="background-video" autoplay loop muted>
                 <source src="video2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
