@@ -54,20 +54,20 @@
 </head>
 <body>
     <div id="fullpage">
-        <div class="section">
+        <div class="section" data-anchor="section1">
             <video class="background-video" autoplay loop muted>
                 <source src="video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <a class="scroll-down-button hvr-slide-down" href="#section2"><span></span></a>
         </div>
-        <div class="section">
+        <div class="section" data-anchor="section2">
             <video class="background-video" autoplay loop muted>
                 <source src="video2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
-        <div class="section">
+        <div class="section" data-anchor="section3">
             <video class="background-video" autoplay loop muted>
                 <source src="video3.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -84,6 +84,7 @@
             navigation: true,
             keyboardScrolling: true,
             continuousVertical: true, // Enable continuous vertical scrolling
+            anchors: ["section1", "section2", "section3"], // Define anchors for each section
             afterLoad: function (origin, destination, direction) {
                 // Called after each section is loaded
                 if (destination.index === 0) {
