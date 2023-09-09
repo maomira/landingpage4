@@ -57,11 +57,32 @@
     <script src="fullpage.min.js"></script>
     <script>
         new fullpage("#fullpage", {
+            // fullPage.js options here
             autoScrolling: true,
             scrollingSpeed: 900,
             navigation: true,
             keyboardScrolling: true,
-            anchors: ["section1", "section2", "section3"],
+            loopBottom: true, // Enable looping at the bottom
+            onLeave: function (origin, destination, direction) {
+                // Called when leaving a section
+                if (origin && origin.index === 2 && direction === "down") {
+                    // Leaving section 3 downwards
+                    // Pause and rewind the video in section 3
+                    const video3 = destination.item.querySelector(".background-video");
+                    video3.pause();
+                    video3.currentTime = 0;
+                }
+            },
+            onSlideLeave: function (section, origin, destination, direction) {
+                // Called when leaving a slide within a section
+                if (section.index === 0 && direction === "right") {
+                    // Leaving slide 1 of section 1 to the right
+                    // Pause and rewind the video in slide 1 of section 1
+                    const video1 = destination.item.querySelector(".background-video");
+                    video1.pause();
+                    video1.currentTime = 0;
+                }
+            },
         });
     </script>
 </body>
