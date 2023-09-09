@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="fullpage.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> <!-- Add the Animate.css library -->
+    <link rel="stylesheet" href="animate.min.css"> <!-- Include animate.css library -->
     <style>
         /* Your custom CSS styles here */
         body {
@@ -39,11 +39,12 @@
             width: 100px;
             height: 100px;
             background: rgba(255, 255, 255, 0.7);
-            border-radius: 0%;
+            border-radius: 50%; /* Make it a circle */
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: animate__animated animate__fadeIn animate__delay-2s; /* Add Animate.css animation classes here */
+            /* Apply animate.css animation class */
+            animation: animate__animated animate__bounce animate__slower infinite;
         }
     </style>
 </head>
@@ -54,7 +55,7 @@
                 <source src="video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <button class="scroll-down-button animate__animated animate__bounce" onclick="scrollToSection('section2')"><span></span></button>
+            <button class="scroll-down-button animate__animated animate__bounce animate__slower" onclick="scrollToSection('section2')"><span></span></button>
         </div>
         <div class="section" data-anchor="section2">
             <video class="background-video" autoplay loop muted>
