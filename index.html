@@ -37,9 +37,10 @@
             left: 50%;
             transform: translateX(-50%);
             cursor: pointer;
-            /* Apply Hover.css animation */
-            animation-duration: 2s; /* Adjust animation duration as needed */
-            font-size: 36px; /* Increase the font size for a larger arrow */
+        }
+        .scroll-down-arrow:hover {
+            /* Apply Hover.css animation on hover */
+            animation: bounce 1s infinite; /* You can choose a different animation from Hover.css */
         }
         .scroll-down-arrow::before {
             content: "";
