@@ -30,6 +30,21 @@
             z-index: -1;
             opacity: 0.7; /* Adjust opacity for better text readability */
         }
+        .scroll-down-arrow {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+        .scroll-down-arrow::before {
+            content: "";
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+        }
     </style>
 </head>
 <body>
@@ -39,6 +54,7 @@
                 <source src="video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+            <div class="scroll-down-arrow"></div>
         </div>
         <div class="section">
             <video class="background-video" autoplay loop muted>
