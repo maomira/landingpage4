@@ -36,24 +36,6 @@
             position: absolute;
             bottom: 30px;
             left: 50%;
-            cursor: pointer;
-            width: 100px;
-            height: 100px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 0%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Add arrow using ::before pseudo-element */
-        .scroll-down-button::before {
-            content: "";
-            border: solid #000;
-            border-width: 0 2px 2px 0;
-            display: inline-block;
-            padding: 10px; /* Adjust padding for arrow size */
-            transform: rotate(45deg); /* Rotate the arrow to make it point downward */
         }
     </style>
 </head>
@@ -64,7 +46,7 @@
                 <source src="video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <a class="scroll-down-button hvr-icon-forward" href="#section2"><span></span></a>
+            <i class="scroll-down-button hvr-icon-forward" href="#section2"><span></span></i>
         </div>
         <div class="section" data-anchor="section2">
             <video class="background-video" autoplay loop muted>
