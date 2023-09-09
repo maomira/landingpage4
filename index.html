@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="fullpage.min.css">
-    <link rel="stylesheet" href="hover-min.css"> <!-- Add the Hover.css library -->
     <style>
         /* Your custom CSS styles here */
         body {
@@ -40,10 +39,11 @@
             width: 50px;
             height: 50px;
             background: rgba(255, 255, 255, 0.7);
-            border-radius: 50%; /* Remove this line to make it not a circle */
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: transform 0.3s ease; /* Add a smooth transition */
         }
         .scroll-down-button a {
             display: block;
@@ -60,6 +60,11 @@
             padding: 6px; /* Increase padding for a larger arrow */
             transform: rotate(45deg);
         }
+
+        /* Hover effect for the arrow */
+        .scroll-down-button:hover {
+            transform: translateX(-50%) scale(1.1); /* Scale up on hover */
+        }
     </style>
 </head>
 <body>
@@ -69,7 +74,7 @@
                 <source src="video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <a class="scroll-down-button hvr-slide-down" href="#section2"><span></span></a>
+            <a class="scroll-down-button" href="#section2"><span></span></a>
         </div>
         <div class="section" data-anchor="section2">
             <video class="background-video" autoplay loop muted>
@@ -111,11 +116,6 @@
                     video3.play();
                 }
             },
-        });
-
-        document.querySelector(".scroll-down-button").addEventListener("click", function (e) {
-            e.preventDefault(); // Prevent the default link behavior
-            fullpage_api.moveSectionDown(); // Scroll to the next section
         });
     </script>
 </body>
