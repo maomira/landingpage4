@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="fullpage.min.css">
-    <link rel="stylesheet" href="animate.min.css"> <!-- Include animate.css library -->
+    <link rel="stylesheet" href="animate.min.css"> <!-- Add the Animate.css library -->
     <style>
         /* Your custom CSS styles here */
         body {
@@ -39,12 +39,11 @@
             width: 100px;
             height: 100px;
             background: rgba(255, 255, 255, 0.7);
-            border-radius: 50%; /* Make it a circle */
+            border-radius: 0%;
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Apply animate.css animation class */
-            animation: animate__animated animate__bounce animate__slower infinite;
+            animation-duration: 1.5s; /* Set animation duration */
         }
     </style>
 </head>
@@ -55,7 +54,7 @@
                 <source src="video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <button class="scroll-down-button animate__animated animate__bounce animate__slower" onclick="scrollToSection('section2')"><span></span></button>
+            <i class="scroll-down-button animate__animated animate__slideOutDown" onclick="scrollToSection('section2')"></i>
         </div>
         <div class="section" data-anchor="section2">
             <video class="background-video" autoplay loop muted>
@@ -100,7 +99,7 @@
         });
 
         function scrollToSection(sectionId) {
-            fullpage_api.moveTo(sectionId);
+            fullpage_api.moveTo(sectionId); // Scroll to the specified section
         }
     </script>
 </body>
