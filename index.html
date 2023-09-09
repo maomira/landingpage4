@@ -9,7 +9,7 @@
   <title>Landing Page</title>
 
   <link rel="stylesheet" href="fullpage.min.css">
-  <link rel="stylesheet" href="hover-min.css">
+  <link rel="stylesheet" href="hover-min.css"> 
   <link rel="stylesheet" href="all.min.css">
 
   <style>
@@ -17,32 +17,11 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;  
     }
 
     .section {
-      height: 100vh;
-    }
-
-    .background-video {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; 
-      z-index: -1;
-    }
-
-    .scroll-down-button {
-      position: relative;
-    }
-    
-    .scroll-down-button i {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -80%);
-      color: #fff;
-      z-index: 2;
+      text-align: center;
+      font-size: 3em;
     }
 
   </style>
@@ -53,21 +32,9 @@
 
   <div id="fullpage">
 
-    <div class="section" data-anchor="section1">
-    
-      <video class="background-video" autoplay loop muted>
-        <source src="video1.mp4" type="video/mp4">
-      </video>
-
-      <div class="scroll-down-button">
-        <i class="fas fa-chevron-down fa-3x" title="Scroll down"></i>
-      </div>
-
-    </div>
-
-    <div class="section" data-anchor="section2"></div>
-
-    <div class="section" data-anchor="section3"></div>
+    <div class="section">Section 1</div>
+    <div class="section">Section 2</div>
+    <div class="section">Section 3</div>
 
   </div>
 
@@ -76,7 +43,11 @@
   <script>
 
     new fullpage('#fullpage', {
-      scrollBar: false
+      autoScrolling: true,
+      scrollBar: false,
+      scrollingSpeed: 700,
+      fitToSection: true,
+      fitToSectionDelay: 300
     });
 
   </script>
