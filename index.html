@@ -37,6 +37,7 @@
             left: 50%;
             transform: translateX(-50%) scale(10); /* Make the arrow 10 times bigger */
             cursor: pointer;
+            animation: arrowAnimation 2s infinite; /* Loop the animation */
         }
         .scroll-down-arrow::before {
             content: "";
@@ -45,6 +46,18 @@
             display: inline-block;
             padding: 3px;
             transform: rotate(45deg);
+        }
+        /* Define the arrow animation */
+        @keyframes arrowAnimation {
+            0% {
+                transform: translateX(-50%) scale(10) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) scale(10) translateY(10px);
+            }
+            100% {
+                transform: translateX(-50%) scale(10) translateY(0);
+            }
         }
         /* Remove the pulse-grow animation */
         .hvr-slide-down {
@@ -59,7 +72,7 @@
                 <source src="video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="scroll-down-arrow hvr-slide-down"></div>
+            <div class="scroll-down-arrow hvr-slide-down animated"></div> <!-- Add the 'animated' class -->
         </div>
         <div class="section">
             <video class="background-video" autoplay loop muted>
