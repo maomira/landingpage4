@@ -63,24 +63,20 @@
             navigation: true,
             keyboardScrolling: true,
             loopBottom: true, // Enable looping at the bottom
-            onLeave: function (origin, destination, direction) {
-                // Called when leaving a section
-                if (origin && origin.index === 2 && direction === "down") {
-                    // Leaving section 3 downwards
-                    // Pause and rewind the video in section 3
-                    const video3 = destination.item.querySelector(".background-video");
-                    video3.pause();
-                    video3.currentTime = 0;
-                }
-            },
-            onSlideLeave: function (section, origin, destination, direction) {
-                // Called when leaving a slide within a section
-                if (section.index === 0 && direction === "right") {
-                    // Leaving slide 1 of section 1 to the right
-                    // Pause and rewind the video in slide 1 of section 1
+            afterLoad: function (origin, destination, direction) {
+                // Called after each section is loaded
+                if (destination.index === 0) {
+                    // Section 1
                     const video1 = destination.item.querySelector(".background-video");
-                    video1.pause();
-                    video1.currentTime = 0;
+                    video1.play();
+                } else if (destination.index === 1) {
+                    // Section 2
+                    const video2 = destination.item.querySelector(".background-video");
+                    video2.play();
+                } else if (destination.index === 2) {
+                    // Section 3
+                    const video3 = destination.item.querySelector(".background-video");
+                    video3.play();
                 }
             },
         });
