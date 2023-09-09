@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="fullpage.min.css">
-    <link rel="stylesheet" href="hover-min.css"> <!-- Add the Hover.css library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> <!-- Add the Animate.css library -->
     <style>
         /* Your custom CSS styles here */
         body {
@@ -31,11 +31,19 @@
             z-index: -1;
             opacity: 0.7; /* Adjust opacity for better text readability */
         }
-         /* Your custom CSS styles here */
         .scroll-down-button {
             position: absolute;
             bottom: 30px;
             left: 50%;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 0%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: animate__animated animate__fadeIn animate__delay-2s; /* Add Animate.css animation classes here */
         }
     </style>
 </head>
@@ -46,7 +54,7 @@
                 <source src="video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <i class="scroll-down-button hvr-icon-forward" href="#section2"><span></span></i>
+            <button class="scroll-down-button animate__animated animate__bounce" onclick="scrollToSection('section2')"><span></span></button>
         </div>
         <div class="section" data-anchor="section2">
             <video class="background-video" autoplay loop muted>
@@ -90,10 +98,9 @@
             },
         });
 
-        document.querySelector(".scroll-down-button").addEventListener("click", function (e) {
-            e.preventDefault(); // Prevent the default link behavior
-            fullpage_api.moveSectionDown(); // Scroll to the next section
-        });
+        function scrollToSection(sectionId) {
+            fullpage_api.moveTo(sectionId);
+        }
     </script>
 </body>
 </html>
