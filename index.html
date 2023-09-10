@@ -33,6 +33,10 @@
             z-index: -1;
             opacity: 0.7; /* Adjust opacity for better text readability */
         }
+        /* Transparent Navigation Bar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0); /* Adjust the opacity to your preference */
+        }
         /* Initial animation for the logo */
         .logo-container {
           animation: initialLogoAnimation 2s ease-in-out forwards;
@@ -198,7 +202,10 @@
       <div class="navbar-brand">
         <!-- Your logo container -->
         <div class="logo-container">
-          <img src="your-logo.png" alt="Your Logo">
+        <!-- Your logo using HTML text elements -->
+            <span class="navbar-item">⩕</span>
+            <span class="navbar-item">.⧂.</span>
+            <span class="navbar-item">⩕</span>
         </div>
         <!-- Burger menu button (for mobile) -->
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
