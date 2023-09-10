@@ -88,6 +88,29 @@
                 transform: translateY(-10px); /* Adjust the floating distance as needed */
             }
         }
+        .quote-button {
+            position: absolute;
+            top: 50%; /* Adjust the vertical position as needed */
+            left: 50%; /* Adjust the horizontal position as needed */
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 2; /* Ensure it appears above the video */
+        }
+
+        .quote-text {
+            font-size: 24px;
+            color: black;
+            font-weight: bold;
+        }
+
+        .quote-author {
+            font-size: 18px;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -101,6 +124,11 @@
                 <span class="button-text">Scroll down</span>
                 <i class="fas fa-arrow-down"></i>
             </button>
+                <!-- New button with quote -->
+            <div class="quote-button">
+                <span class="quote-text">"Magnetic"</span>
+                <span class="quote-author">- Scherzo Magazine</span>
+            </div>
         </div>
         <div class="section" data-anchor="section2">
             <video class="background-video" autoplay loop muted>
