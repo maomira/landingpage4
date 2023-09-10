@@ -90,37 +90,36 @@
         }
                 .quote-button {
             position: absolute;
-            top: 50%; /* Adjust the vertical position as needed */
-            left: 50%; /* Adjust the horizontal position as needed */
+            top: 20%; /* Adjust the vertical position as needed */
+            left: 20%; /* Adjust the horizontal position as needed */
             transform: translate(-50%, -50%);
             text-align: center;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0);
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
             z-index: 2; /* Ensure it appears above the video */
             opacity: 0; /* Initially hide the button */
-            animation: fadeInAndScale 4s ease-out forwards; /* Apply custom animation */
+            animation: fadeInAndScale 8s ease-out forwards; /* Apply custom animation */
         }
 
         .quote-text {
             font-size: 24px;
             color: black;
-            font-weight: bold;
-            animation: fadeInAndScale 4s ease-out forwards; /* Apply custom animation */
+            animation: fadeInAndScale 8s ease-out forwards; /* Apply custom animation */
         }
 
         .quote-author {
-            font-size: 18px;
+            font-size: 14px;
             color: #333;
-            animation: fadeInAndScale 4s ease-out forwards; /* Apply custom animation */
+            animation: fadeInAndScale 8s ease-out forwards; /* Apply custom animation */
         }
 
         /* Custom animation keyframes */
         @keyframes fadeInAndScale {
             0% {
                 opacity: 0;
-                transform: translate(-50%, -50%) scale(0.5); /* Initial state */
+                transform: translate(-50%, -50%) scale(0.7); /* Initial state */
             }
             100% {
                 opacity: 1;
