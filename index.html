@@ -76,20 +76,6 @@
             padding: 0;
             font-family: Arial, sans-serif;
         }
-        /* Add custom float animation */
-        .custom-float-animation {
-          animation: floatAnimation 6s infinite alternate;
-          animation-delay: 5s; /* Add a delay of 1 second (adjust as needed) */
-        }
-        /* Keyframes for the floating animation */
-        @keyframes floatAnimation {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-10px); /* Adjust the floating distance as needed */
-          }
-        }
     </style>
 </head>
 <body>
@@ -99,7 +85,7 @@
                 <source src="video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <button class="scroll-down-button animate__animated animate__slideInDown animate__slower animate__delay-1s custom-float-animation" onclick="scrollToSection('section2')">
+            <button class="scroll-down-button animate__animated animate__slideInDown animate__slower animate__delay-1s" onclick="scrollToSection('section2')">
                 <span class="button-text">Scroll down</span>
                 <i class="fas fa-arrow-down"></i>
             </button>
@@ -149,6 +135,14 @@
         function scrollToSection(sectionId) {
             fullpage_api.moveTo(sectionId);
         }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                const button = document.querySelector(".scroll-down-button");
+                button.classList.add("custom-float-animation");
+            }, 1000); // Add a delay of 1 second (adjust as needed)
+        });
     </script>
 </body>
 </html>
