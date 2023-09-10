@@ -138,9 +138,14 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            setTimeout(function () {
-                const button = document.querySelector(".scroll-down-button");
+            const button = document.querySelector(".scroll-down-button");
+        
+            button.addEventListener("animationend", function () {
                 button.classList.add("custom-float-animation");
+            }, { once: true });
+        
+            setTimeout(function () {
+                button.classList.add("animate__slideInDown", "animate__slower", "animate__delay-1s");
             }, 1000); // Add a delay of 1 second (adjust as needed)
         });
     </script>
