@@ -88,27 +88,34 @@
                 transform: translateY(-10px); /* Adjust the floating distance as needed */
             }
         }
-        .quote-button {
+                .quote-button {
             position: absolute;
-            top: 30%; /* Adjust the vertical position as needed */
-            left: 30%; /* Adjust the horizontal position as needed */
+            top: 50%; /* Adjust the vertical position as needed */
+            left: 50%; /* Adjust the horizontal position as needed */
             transform: translate(-50%, -50%);
             text-align: center;
-            background: rgba(255, 255, 255, 0);
+            background: rgba(255, 255, 255, 0.7);
             padding: 20px;
             border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             z-index: 2; /* Ensure it appears above the video */
+            opacity: 0; /* Initially hide the button */
+            animation: fadeInAndScale 4s ease-out forwards; /* Apply custom animation */
         }
 
         .quote-text {
-            font-size: 20px;
+            font-size: 24px;
             color: black;
+            font-weight: bold;
+            animation: fadeInAndScale 4s ease-out forwards; /* Apply custom animation */
         }
 
         .quote-author {
-            font-size: 14px;
+            font-size: 18px;
             color: #333;
+            animation: fadeInAndScale 4s ease-out forwards; /* Apply custom animation */
         }
+
         /* Custom animation keyframes */
         @keyframes fadeInAndScale {
             0% {
