@@ -41,12 +41,7 @@
         .logo-container {
           animation: initialLogoAnimation 2s ease-in-out forwards;
         }
-
-        /* Animation to make the logo smaller and move it up */
-        .logo-container.small {
-          animation: shrinkAndMoveUp 1s ease-in-out forwards;
-        }
-
+        
         @keyframes initialLogoAnimation {
           0% {
             opacity: 0;
@@ -58,14 +53,6 @@
           }
         }
 
-        @keyframes shrinkAndMoveUp {
-          0% {
-            transform: scale(1);
-          }
-          100% {
-            transform: scale(0.8) translateY(-10px);
-          }
-        }
         .scroll-down-button {
             position: absolute;
             bottom: 10px;
@@ -199,27 +186,17 @@
 </head>
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <!-- Your logo container -->
         <div class="logo-container">
-        <!-- Your logo using HTML text elements -->
+            <!-- Your logo using HTML text elements -->
             <span class="navbar-item">⩕</span>
             <span class="navbar-item">.⧂.</span>
             <span class="navbar-item">⩕</span>
         </div>
-        <!-- Burger menu button (for mobile) -->
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </a>
-      </div>
-
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <!-- Your menu items go here -->
-        </div>
-      </div>
     </nav>
     <div id="fullpage">
         <div class="section" data-anchor="section1">
@@ -315,14 +292,6 @@
                 // Add custom float animation classes
                 button.classList.add("custom-float-animation");
             }, { once: true });
-        });
-    </script>
-    </script>
-    document.addEventListener("DOMContentLoaded", function () {
-          const logoContainer = document.querySelector(".logo-container");
-          setTimeout(function () {
-            logoContainer.classList.add("small");
-          }, 1000); // Add a delay to start the second animation
         });
     </script>
 </body>
