@@ -49,6 +49,7 @@
             align-items: center;
             justify-content: center;
             text-align: center; /* Center the content horizontally */
+            animation: floatAnimation 6s infinite alternate; /* Apply the floating animation */
         }
         .button-text {
             font-size: 12px; /* Adjust the font size as needed */
@@ -75,6 +76,15 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+        }
+        /* Keyframes for the floating animation */
+        @keyframes floatAnimation {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-10px); /* Adjust the floating distance as needed */
+          }
         }
     </style>
 </head>
