@@ -47,6 +47,11 @@
             align-items: center;
             justify-content: center;
         }
+        .button-text {
+            font-size: 18px; /* Adjust the font size as needed */
+            color: black; /* Change the text color as needed */
+            margin-bottom: 5px; /* Add spacing between text and arrow */
+        }
         .double-arrow {
             font-size: 200px; /* Adjust the size as needed */
             color: black; /* Change the color as needed */
@@ -62,8 +67,9 @@
                 <source src="video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <button class="scroll-down-button animate__animated animate__slideInDown animate__slower animate__delay-1500ms" onclick="scrollToSection('section2')">
-                <i class="fas fa-arrow-down"></i>
+            <button class="scroll-down-button animate__animated animate__slideInDown animate__slower animate__delay-2s" onclick="scrollToSection('section2')">
+                <span class="button-text">Scroll Down</span>
+                <span class="double-arrow">&raquo;</span>
             </button>
         </div>
         <div class="section" data-anchor="section2">
