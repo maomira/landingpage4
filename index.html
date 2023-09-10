@@ -109,6 +109,17 @@
             font-size: 14px;
             color: #333;
         }
+        /* Custom animation keyframes */
+        @keyframes fadeInAndScale {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5); /* Initial state */
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1); /* Final state */
+            }
+        }
     </style>
 </head>
 <body>
@@ -123,9 +134,9 @@
                 <i class="fas fa-arrow-down"></i>
             </button>
             <!-- New button with quote -->
-            <div class="quote-button animate__animated animate__fadeIn animate__slower">
-                <span class="quote-text">"Your quote here."</span>
-                <span class="quote-author">- Author Name</span>
+            <div class="quote-button">
+                <span class="quote-text">"Magnetic"</span>
+                <span class="quote-author">- Scherzo Magazine</span>
             </div>
         </div>
         <div class="section" data-anchor="section2">
