@@ -40,9 +40,9 @@
             height: 60px; /* Adjust the height as needed */
             color: black; /* Text color */
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Center the content horizontally */
             align-items: center;
-            padding: 0 20px; /* Add some padding to the left and right */
+            padding: 0; /* Remove padding to center the logo horizontally */
             position: fixed;
             top: 0;
             left: 0;
@@ -52,6 +52,10 @@
         /* Style for the logo container */
         .logo-container {
             text-align: center; /* Center the text horizontally */
+            flex: 1; /* Take up remaining space in the navbar */
+            display: flex;
+            justify-content: center; /* Center the text horizontally */
+            align-items: center; /* Center the text vertically */
         }
 
         /* Style for the logo text */
