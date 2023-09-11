@@ -244,12 +244,14 @@
             </div>
         </div>
         <div class="section" data-anchor="section1">
-            <div class="video-container">
-                <video id="background-video-1" class="background-video" autoplay loop muted>
-                    <source src="video1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+            <!-- Background color layer -->
+            <div class="background-color"></div>
+
+            <!-- Video element -->
+            <video class="background-video" autoplay loop muted>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <button class="scroll-down-button animate__animated animate__slideInDown animate__slower animate__delay-1s" onclick="scrollToSection('section2')">
                 <span class="button-text">Scroll down</span>
                 <i class="fas fa-arrow-down"></i>
