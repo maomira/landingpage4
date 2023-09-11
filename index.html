@@ -56,17 +56,11 @@
             display: flex;
             justify-content: center; /* Center the text horizontally */
             align-items: center; /* Center the text vertically */
-            animation: logoAnimation 2s ease-in-out infinite alternate; /* Example animation */
         }
-
-        /* Define the logo animation keyframes */
-        @keyframes logoAnimation {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.1); /* Scale the logo container */
-            }
+        /* CSS for the initial animation state */
+        .logo-container.start-animation {
+            transform: scale(10); /* Initial scale, make it larger */
+            transition: transform 0.5s ease-in-out; /* Transition effect */
         }
 
         /* Style for the logo text */
@@ -211,7 +205,7 @@
             <!-- Navigation Bar -->
         <!-- Navigation Bar -->
         <div class="navbar">
-            <div class="logo-container">
+            <div class="logo-container start-animation">
                 <!-- Your logo using HTML text elements -->
                 <span class="navbar-item">⩕</span>
                 <span class="navbar-item">.⧂.</span>
@@ -311,6 +305,17 @@
                 // Add custom float animation classes
                 button.classList.add("custom-float-animation");
             }, { once: true });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const logoContainer = document.querySelector(".logo-container");
+
+            // Delay for 1 second (1000 milliseconds)
+            setTimeout(function () {
+                // Remove the start-animation class to trigger the transition
+                logoContainer.classList.remove("start-animation");
+            }, 1000); // Adjust the delay time as needed
         });
     </script>
 </body>
