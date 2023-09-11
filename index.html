@@ -134,7 +134,7 @@
                 transform: translateY(-10px); /* Adjust the floating distance as needed */
             }
         }
-                .quote-button {
+            .quote-button {
             position: absolute;
             width: 300px; /* Set a fixed width for the button */
             top: 20%; /* Adjust the vertical position as needed */
@@ -148,6 +148,7 @@
             z-index: 2; /* Ensure it appears above the video */
             opacity: 0; /* Initially hide the button */
             animation: fadeInAndScale 8s ease-out forwards; /* Apply custom animation */
+            animation-delay: 5000ms;
         }
 
         .quote-text {
@@ -163,7 +164,6 @@
             font-size: 14px;
             color: #333;
             animation: fadeInAndScale 8s ease-out forwards; /* Apply custom animation */
-            animation-delay: 5000ms;
             text-align: center; /* Center the text within the button */
             margin-top: auto; /* Push the author name to the bottom */
         }
