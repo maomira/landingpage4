@@ -311,11 +311,10 @@
         document.addEventListener("DOMContentLoaded", function () {
             const logoContainer = document.querySelector(".logo-container");
 
-            // Delay for 1 second (1000 milliseconds)
+            // Delay for 1 second (1000 milliseconds) before applying the larger scale
             setTimeout(function () {
-                // Remove the start-animation class to trigger the transition
-                logoContainer.classList.remove("start-animation");
-            }, 1000); // Adjust the delay time as needed
+                logoContainer.style.transform = "scale(1)"; // Set the smaller scale
+            }, 3000); // Adjust the delay time as needed
         });
     </script>
 </body>
