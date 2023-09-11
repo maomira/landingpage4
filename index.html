@@ -25,22 +25,7 @@
             position: relative;
             overflow: hidden;
         }
-        /* Style for the video container */
-        .video-container {
-            position: relative;
-        }
-
-        /* Style for the overlay */
-        .video-container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 1); /* Adjust the opacity (last value) to make it darker or lighter */
-            pointer-events: none; /* Allow clicks to go through the overlay to the video */
-            z-index: 2; /* Ensure the overlay is above the video */
+        
         }
         .background-video {
             position: absolute;
@@ -51,6 +36,7 @@
             object-fit: cover;
             z-index: -1;
             opacity: 1; /* Adjust opacity for better text readability */
+            filter: brightness(0.5); /* Adjust the brightness value (0.5 for half brightness) */
         }
                 /* Style for the navigation bar */
         .navbar {
@@ -244,9 +230,6 @@
             </div>
         </div>
         <div class="section" data-anchor="section1">
-            <!-- Background color layer -->
-            <div class="background-color"></div>
-
             <!-- Video element -->
             <video class="background-video" autoplay loop muted>
                 <source src="video1.mp4" type="video/mp4">
