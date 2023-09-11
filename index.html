@@ -34,27 +34,7 @@
             z-index: -1;
             opacity: 0.7; /* Adjust opacity for better text readability */
         }
-        /* Transparent Navigation Bar */
-        .navbar {
-            background-color: rgba(255, 255, 255, 0) !important; /* Adjust the opacity to your preference */
-        }
-        /* Initial animation for the logo */
-        .logo-container {
-          background-color: rgba(255, 255, 255, 0) !important; /* Adjust the opacity to your preference */
-          animation: initialLogoAnimation 2s ease-in-out forwards;
-        }
         
-        @keyframes initialLogoAnimation {
-          0% {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
         .scroll-down-button {
             position: absolute;
             bottom: 10px;
@@ -187,19 +167,6 @@
     </style>
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="logo-container">
-            <!-- Your logo using HTML text elements -->
-            <span class="navbar-item">⩕</span>
-            <span class="navbar-item">.⧂.</span>
-            <span class="navbar-item">⩕</span>
-        </div>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-    </nav>
     <div id="fullpage">
         <div class="section" data-anchor="section1">
             <video class="background-video" autoplay loop muted>
