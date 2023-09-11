@@ -43,7 +43,19 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 20px; /* Add some padding to the left and right */
-            z-index: 2;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999; /* Ensure it appears on top of other content */
+        }
+
+        /* Style for navigation links */
+        .navbar a {
+            text-decoration: none; /* Remove underlines from links */
+            color: white; /* Link text color */
+            margin-right: 20px; /* Add spacing between links */
+            font-weight: bold; /* Make text bold */
         }
         .scroll-down-button {
             position: absolute;
@@ -179,7 +191,18 @@
 <body>
     <div id="fullpage">
             <!-- Navigation Bar -->
+        <!-- Navigation Bar -->
         <div class="navbar">
+            <div class="logo">
+                <a href="#">Your Logo</a>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Contact</a>
+            </div>
         </div>
         <div class="section" data-anchor="section1">
             <video class="background-video" autoplay loop muted>
