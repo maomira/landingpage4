@@ -56,6 +56,17 @@
             display: flex;
             justify-content: center; /* Center the text horizontally */
             align-items: center; /* Center the text vertically */
+            animation: logoAnimation 2s ease-in-out infinite alternate; /* Example animation */
+        }
+
+        /* Define the logo animation keyframes */
+        @keyframes logoAnimation {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1); /* Scale the logo container */
+            }
         }
 
         /* Style for the logo text */
