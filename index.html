@@ -59,8 +59,8 @@
         }
         /* CSS for the initial animation state */
         .logo-container.start-animation {
-            transform: scale(10); /* Initial scale, make it larger */
-            transition: transform 2s ease-in-out; /* Transition effect */
+            transform: scale(10) translateY(50px); /* Initial scale and vertical positioning */
+            transition: transform 1s ease-in-out; /* Transition effect */
         }
 
         /* Style for the logo text */
@@ -313,7 +313,7 @@
 
             // Delay for 1 second (1000 milliseconds) before applying the larger scale
             setTimeout(function () {
-                logoContainer.style.transform = "scale(1)"; // Set the smaller scale
+                logoContainer.style.transform = "scale(1) translateY(0)"; // Set the final scale and original position
             }, 3000); // Adjust the delay time as needed
         });
     </script>
