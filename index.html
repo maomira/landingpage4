@@ -227,10 +227,10 @@
             </div>
         </div>
         <div class="section" data-anchor="section1">
-            <video class="background-video" autoplay loop muted>
-                <source src="video1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <video id="background-video-1" class="background-video" autoplay loop muted>
+            <source src="video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
             <button class="scroll-down-button animate__animated animate__slideInDown animate__slower animate__delay-1s" onclick="scrollToSection('section2')">
                 <span class="button-text">Scroll down</span>
                 <i class="fas fa-arrow-down"></i>
@@ -336,6 +336,14 @@
                 logoContainer.style.transform = "scale(3) translateY(0)"; // Set the final scale and original position
                 logoContainer.style.opacity = 1; // Ensure the logo is fully visible
             }, 300); // Adjust the delay time as needed
+        });
+    </script>
+    </script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const video1 = document.getElementById("background-video-1");
+    
+            // Set the playbackRate to control video speed (0.5 for half speed)
+            video1.playbackRate = 0.5; // Adjust the value as needed
         });
     </script>
 </body>
