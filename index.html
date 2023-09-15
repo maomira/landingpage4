@@ -425,32 +425,6 @@
           customCursor.style.left = e.clientX + 'px';
           customCursor.style.top = e.clientY + 'px';
         });
-        
-        // JavaScript to update the custom cursor color
-        const customCursor = document.querySelector('.custom-cursor');
-        let isHoveringStartButton = false; // Track if cursor is hovering over the start button
-        
-        
-         if (isHoveringStartButton) {
-              // Change the cursor's background color to black when hovering over the start button
-              customCursor.style.backgroundColor = 'black';
-          } else {
-            // Reset cursor's background color when not hovering over an element with a background
-            customCursor.style.backgroundColor = '';
-          }
-        
-        
-        // Handle hover event for the start button
-        const startButton = document.querySelector('.start-button');
-        startButton.addEventListener('mouseover', () => {
-          isHoveringStartButton = true;
-          customCursor.style.backgroundColor = 'black'; // Change cursor color to black
-        });
-        
-        startButton.addEventListener('mouseout', () => {
-          isHoveringStartButton = false;
-          customCursor.style.backgroundColor = ''; // Reset cursor color
-        });
 
         
     </script>
