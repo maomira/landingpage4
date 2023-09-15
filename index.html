@@ -417,6 +417,16 @@
 
         
         // MOUSE - JavaScript to update the custom cursor position and color
+        // JavaScript to update the custom cursor position
+        const customCursor = document.querySelector('.custom-cursor');
+        
+        document.addEventListener('mousemove', (e) => {
+          // Update the cursor position
+          customCursor.style.left = e.clientX + 'px';
+          customCursor.style.top = e.clientY + 'px';
+        });
+        
+        // JavaScript to update the custom cursor color
         const customCursor = document.querySelector('.custom-cursor');
         let isHoveringStartButton = false; // Track if cursor is hovering over the start button
         
