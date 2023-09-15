@@ -267,15 +267,38 @@
                 left: 80%; /* Adjust the horizontal position as needed */
         }
 
-        /* MAIN REEL - Style for main reel */
-        .iframe-container {
-          position: relative; /* Makes the container a positioned parent */
-          width: 100%; /* Adjust the width as needed */
-          max-width: 800px; /* Adjust the maximum width as needed */
-          margin: 0 auto; /* Center the container horizontally */
-          padding-top: 20px; /* Adjust the top padding as needed */
-          text-align: center; /* Center the iframe within the container */
+        /* AUDIO PLAYER MAIN REEL - CSS for the audio player */
+        .audio-player {
+          width: 100%;
+          max-width: 400px; /* Adjust the maximum width as needed */
+          margin: 0 auto;
+          text-align: center;
+          padding: 20px;
+          background-color: #f0f0f0; /* Customize the background color */
+          border: 1px solid #ccc; /* Customize the border */
+          border-radius: 5px; /* Customize the border radius */
         }
+        
+        audio {
+          width: 100%;
+        }
+        
+        /* Style the audio controls */
+        audio::-webkit-media-controls-panel {
+          background-color: transparent; /* Customize the controls background color */
+        }
+        
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-pause-button,
+        audio::-webkit-media-controls-mute-button,
+        audio::-webkit-media-controls-volume-slider {
+          background-color: #333; /* Customize the controls' buttons color */
+        }
+        
+        audio::-webkit-media-controls-volume-slider {
+          width: 60px; /* Customize the volume slider width */
+        }
+
     </style>
 </head>
     
@@ -342,15 +365,24 @@
                 <source src="video2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-                <!-- ReelCrafter reel: Main Reel -->
-            <div class="iframe-container">
-                <iframe
-                    width="100%"
-                    height="400"
-                    scrolling="no"
-                    frameborder="no"
-                    src="https://play.reelcrafter.com/embed/ee9dd612-a360-4307-81b9-ce513723ca0c">
-                </iframe>
+            <!-- HTML for the audio player -->
+            <div class="audio-player">
+              <audio controls>
+                <!-- MP3 format (commonly supported) -->
+                <source src="audio1.mp3" type="audio/mpeg">
+                <!-- OGG format (for Firefox and older browsers) -->
+                <source src="audio1.ogg" type="audio/ogg">
+                <!-- Add similar source elements for your other audio files -->
+                <source src="audio2.mp3" type="audio/mpeg">
+                <source src="audio2.ogg" type="audio/ogg">
+                <!-- Add sources for all 16 audio files -->
+                <source src="audio3.mp3" type="audio/mpeg">
+                <source src="audio3.ogg" type="audio/ogg">
+                <!-- ...
+                     ... -->
+                <!-- Fallback message for unsupported browsers -->
+                Your browser does not support the audio element.
+              </audio>
             </div>
         </div>
         <div class="section" data-anchor="section3">
