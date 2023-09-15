@@ -269,27 +269,35 @@
         }
 
         /* AUDIO PLAYER MAIN REEL - CSS for the audio player */
-        .audio-player {
-          width: 100%; /* Set the width to 100% to make it responsive */
-          max-width: 400px; /* Set a maximum width to control the size */
-          margin: 0 auto; /* Center-align the audio player horizontally */
-          padding: 10px; /* Add padding for spacing */
-          border: 2px solid #333; /* Add a border for visual distinction */
-          border-radius: 5px; /* Add rounded corners */
-          background-color: #f1f1f1; /* Set a background color */
+        /* Style for the custom audio player */
+        .custom-audio-player {
+            text-align: center;
+            margin-top: 20px;
         }
-        
-        .audio-player audio {
-          width: 100%; /* Set the width of the audio element to 100% */
-          height: auto; /* Automatically adjust the height based on the aspect ratio of the audio */
-          display: block; /* Ensure the audio element is a block-level element */
-          border: none; /* Remove any border on the audio element */
-          background-color: transparent; /* Make the audio element background transparent */
-          outline: none; /* Remove focus outline */
+
+        /* Style the audio player controls */
+        .custom-audio-player audio {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
         }
-        
-        .audio-player audio::-webkit-media-controls-panel {
-          display: none; /* Hide the default control panel for Webkit browsers (Chrome, Safari) */
+
+        /* Hide default audio player controls */
+        .custom-audio-player audio::-webkit-media-controls {
+            display: none;
+        }
+
+        /* Style your custom play/pause button */
+        .custom-audio-player .play-pause-button {
+            background-color: #566574;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .custom-audio-player .play-pause-button:hover {
+            background-color: #34495e;
         }
 
     </style>
@@ -358,24 +366,20 @@
                 <source src="video2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <!-- HTML for the audio player -->
-            <div class="audio-player">
-              <audio controls>
-                <!-- MP3 format (commonly supported) -->
-                <source src="audio1.mp3" type="audio/mpeg">
-                <!-- OGG format (for Firefox and older browsers) -->
-                <source src="audio1.ogg" type="audio/ogg">
-                <!-- Add similar source elements for your other audio files -->
-                <source src="audio2.mp3" type="audio/mpeg">
-                <source src="audio2.ogg" type="audio/ogg">
-                <!-- Add sources for all 16 audio files -->
-                <source src="audio3.mp3" type="audio/mpeg">
-                <source src="audio3.ogg" type="audio/ogg">
-                <!-- ...
-                     ... -->
-                <!-- Fallback message for unsupported browsers -->
-                Your browser does not support the audio element.
-              </audio>
+               <!-- Custom Audio Player -->
+            <div class="custom-audio-player">
+                <audio id="audio" controls>
+                    <!-- MP3 format (commonly supported) -->
+                    <source src="audio1.mp3" type="audio/mpeg">
+                    <!-- OGG format (for Firefox and older browsers) -->
+                    <source src="audio1.ogg" type="audio/ogg">
+                    <!-- Add similar source elements for your other audio files -->
+                    <source src="audio2.mp3" type="audio/mpeg">
+                    <source src="audio2.ogg" type="audio/ogg">
+                    <!-- Add sources for all 16 audio files -->
+                    <!-- Fallback message for unsupported browsers -->
+                    Your browser does not support the audio element.
+                </audio>
             </div>
         </div>
         <div class="section" data-anchor="section3">
@@ -474,6 +478,32 @@
         startButton.addEventListener('mouseout', () => {
           customCursor.style.border = '2px solid white'; /* Reset cursor border color to white */
         });
+
+
+        // AUDIO PLAYER - Function
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('audio');
+            const playPauseButton = document.querySelector('.play-pause-button');
+        
+            // Play/Pause Button Click Event
+            playPauseButton.addEventListener('click', function () {
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+            });
+        
+            // Update Play/Pause Button State
+            audio.addEventListener('play', function () {
+                playPauseButton.textContent = 'Pause';
+            });
+        
+            audio.addEventListener('pause', function () {
+                playPauseButton.textContent = 'Play';
+            });
+        });
+
 
         
     </script>
