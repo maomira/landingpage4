@@ -25,9 +25,8 @@
           position: absolute;
           width: 24px;
           height: 24px;
-          border: 2px solid #fff; /* Initial color (white) */
+          border: 2px solid #fff; /* Border for the cursor (white in this example) */
           border-radius: 50%; /* Make it a circle */
-          background-color: red; /* Change the background color to your desired color */
           pointer-events: none; /* Ensure it doesn't interfere with other elements */
           transform: translate(-50%, -50%);
           transition: transform 0.1s ease, border-color 0.1s ease; /* Add transitions for smooth animations */
@@ -419,42 +418,14 @@
         });
 
         
-        // MOUSE - JavaScript to update the custom cursor position and color
+        // MOUSE - JavaScript to update the custom cursor position
         const customCursor = document.querySelector('.custom-cursor');
 
         document.addEventListener('mousemove', (e) => {
-            const elementUnderCursor = document.elementFromPoint(e.clientX, e.clientY);
-
-            // Check if the element under the cursor has a background color
-            if (elementUnderCursor && window.getComputedStyle(elementUnderCursor).backgroundColor) {
-                const bgColor = window.getComputedStyle(elementUnderCursor).backgroundColor;
-
-                // Calculate the chromatic opposite color
-                const oppositeColor = calculateChromaticOpposite(bgColor);
-
-                // Update the cursor's background color
-                customCursor.style.backgroundColor = oppositeColor;
-            }
-    
-            // Update the cursor position
-            customCursor.style.left = e.clientX + 'px';
-            customCursor.style.top = e.clientY + 'px';
+          // Update the cursor position
+          customCursor.style.left = e.clientX + 'px';
+          customCursor.style.top = e.clientY + 'px';
         });
-
-        
-        // MOUSE - Function to calculate the chromatic opposite color
-        function calculateChromaticOpposite(color) {
-            const rgbValues = color.match(/\d+/g);
-            if (!rgbValues) return 'red'; // Default color in case of an error
-
-            // Calculate the inverted (complementary) color
-            const invertedRGB = rgbValues.map(value => 255 - parseInt(value));
-
-            // Convert RGB values to a CSS color string
-            const oppositeColor = `rgb(${invertedRGB.join(',')})`;
-
-            return oppositeColor;
-            }
         
     </script>
 </body>
