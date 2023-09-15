@@ -268,8 +268,14 @@
         }
 
         /* AUDIO PLAYER MAIN REEL - CSS for the audio player */
-        .audio-player audio {
+        .audio-player {
           width: 100%; /* Set the width to 100% to make it responsive */
+          max-width: 400px; /* Set a maximum width to control the size */
+          margin: 0 auto; /* Center-align the audio player horizontally */
+        }
+        
+        .audio-player audio {
+          width: 100%; /* Set the width of the audio element to 100% */
           height: auto; /* Automatically adjust the height based on the aspect ratio of the audio */
           background-color: #f1f1f1; /* Set a background color */
           border: 2px solid #333; /* Add a border for visual distinction */
