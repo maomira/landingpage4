@@ -349,6 +349,7 @@
                <button onclick="document.getElementById('player').volume += 0.2">Vol+</button>
                <button onclick="document.getElementById('player').volume -= 0.2">Vol-</button>
             </div>
+            <progress id="progress" value="0" max="100"></progress>
         </div>
         <div class="section" data-anchor="section3">
             <video class="background-video" autoplay loop muted>
@@ -446,6 +447,25 @@
         startButton.addEventListener('mouseout', () => {
           customCursor.style.border = '2px solid white'; /* Reset cursor border color to white */
         });
+
+
+
+        // AUDIO TRACK PLAYBACK BAR
+        const player = document.getElementById('player');
+        const progress = document.getElementById('progress');
+        
+        player.addEventListener('timeupdate', () => {
+           const currentTime = player.currentTime;
+           const duration = player.duration;
+           const percentage = (currentTime / duration) * 100;
+           progress.value = percentage;
+        });
+        
+        // To update the progress bar when the audio is loaded
+        player.addEventListener('loadedmetadata', () => {
+           progress.max = player.duration;
+        });
+
     </script>
 </body>
 </html>
