@@ -270,18 +270,28 @@
 
         /* SIMPLE PLAYLIST - Styles for the simple button */
         .simple-button {
-            /* Add your button styles here (transparent background, white borders, sizing) */
-            background: transparent;
-            border: 2px solid white;
-            width: 50%; /* Adjust the width as needed */
-            height: auto; /* Adjust the height as needed */
-            /* Add any other styles as desired */
+            position: absolute;
+            left: 10%; /* Adjust the left position as needed */
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%; /* Adjust the button width as needed */
+            text-align: center;
         }
         
-        .simple-button audio {
-            border-radius: 0; /* Remove rounded corners */
-            width: 100%; /* Make it fill the entire button width */
-            height: auto; /* Adjust the height proportionally */
+        .simple-button button {
+            background: transparent;
+            border: 2px solid white;
+            padding: 10px 20px;
+            color: white;
+            font-size: 16px;
+            border-radius: 0; /* Remove button border radius */
+            cursor: pointer;
+            outline: none; /* Remove focus outline */
+        }
+        
+        .simple-button button:hover {
+            background: white;
+            color: #333; /* Change text color on hover */
         }
 
     </style>
