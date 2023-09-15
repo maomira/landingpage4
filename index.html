@@ -434,6 +434,16 @@
           customCursor.style.border = '2px solid white'; /* Reset cursor border color to white */
         });
 
+        // START BUTTON - Function for clicking on it
+        // Find the Start button element
+        const startButton = document.querySelector('.start-button');
+
+        // Add a click event listener to the Start button
+        startButton.addEventListener('click', () => {
+            // Use fullPage.js API to scroll to the next section
+            fullpage_api.moveSectionDown();
+        });
+
         
     </script>
 </body>
