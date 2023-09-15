@@ -341,8 +341,11 @@
         </div>
     </div>
 
+
+    
     <script src="fullpage.min.js"></script>
     <script>
+        // FULLPAGE.JS - Function for fullPage.js options
         new fullpage("#fullpage", {
             // fullPage.js options here
             autoScrolling: true,
@@ -372,8 +375,9 @@
         function scrollToSection(sectionId) {
             fullpage_api.moveTo(sectionId);
         }
-    </script>
-    <script>
+
+        
+        // SCROLL DOWN BUTTON - Function for scroll down button animation
         document.addEventListener("DOMContentLoaded", function () {
             const button = document.querySelector(".scroll-down-button");
 
@@ -385,8 +389,9 @@
                 button.classList.add("custom-float-animation");
             }, { once: true });
         });
-    </script>
-    <script>
+
+        
+        // LOGO - Function for logo's initial animation
         document.addEventListener("DOMContentLoaded", function () {
             const logoContainer = document.querySelector(".logo-container");
 
@@ -396,17 +401,18 @@
                 logoContainer.style.opacity = 1; // Ensure the logo is fully visible
             }, 300); // Adjust the delay time as needed
         });
-    </script>
-    <script>
+
+        
+        // BACKGROUND VIDEOS - Function to control each videos' speed
         document.addEventListener("DOMContentLoaded", function () {
             const video1 = document.getElementById("background-video-1")
 
             // Set the playbackRate to control video speed (0.5 for half speed)
             video1.playbackRate = 1; // Adjust the value as needed
         });
-    </script>
-    <script>
-        // JavaScript to update the custom cursor position and color
+
+        
+        // MOUSE - JavaScript to update the custom cursor position and color
         const customCursor = document.querySelector('.custom-cursor');
 
         document.addEventListener('mousemove', (e) => {
@@ -428,7 +434,8 @@
             customCursor.style.top = e.clientY + 'px';
         });
 
-        // Function to calculate the chromatic opposite color
+        
+        // MOUSE - Function to calculate the chromatic opposite color
         function calculateChromaticOpposite(color) {
             const rgbValues = color.match(/\d+/g);
             if (!rgbValues) return 'red'; // Default color in case of an error
@@ -441,6 +448,28 @@
 
             return oppositeColor;
         }
+
+        
+        // START BUTTON - Function to add animation when the mouse is over it
+        document.addEventListener("DOMContentLoaded", function () {
+            const startButton = document.querySelector(".start-button");
+
+            // Function to add the 'animate__animated' and 'animate__flip' classes
+            function addFlipAnimation() {
+                startButton.classList.add("animate__animated", "animate__flip");
+            }
+
+            // Function to remove the 'animate__animated' and 'animate__flip' classes
+            function removeFlipAnimation() {
+                startButton.classList.remove("animate__animated", "animate__flip");
+            }
+
+            // Add the flip animation on mouseover
+            startButton.addEventListener("mouseover", addFlipAnimation);
+
+            // Remove the flip animation on mouseout
+            startButton.addEventListener("mouseout", removeFlipAnimation);
+        });
     </script>
 </body>
 </html>
