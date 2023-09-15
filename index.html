@@ -418,6 +418,7 @@
         
         // MOUSE - JavaScript to update the custom cursor position and color
         const customCursor = document.querySelector('.custom-cursor');
+        const startButton = document.querySelector('.start-button');
         
         document.addEventListener('mousemove', (e) => {
           // Update the cursor position
@@ -425,16 +426,12 @@
           customCursor.style.top = e.clientY + 'px';
         });
         
-        // Handle hover event for the start button
-        const startButton = document.querySelector('.start-button');
         startButton.addEventListener('mouseover', () => {
           customCursor.style.border = '2px solid black'; /* Change cursor border color to black */
-          customCursor.style.backgroundColor = 'black'; /* Change cursor background color to black */
         });
         
         startButton.addEventListener('mouseout', () => {
-          customCursor.style.border = '2px solid transparent'; /* Reset cursor border color */
-          customCursor.style.backgroundColor = 'transparent'; /* Reset cursor background color */
+          customCursor.style.border = '2px solid white'; /* Reset cursor border color to white */
         });
 
         
