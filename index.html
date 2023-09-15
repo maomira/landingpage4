@@ -268,36 +268,30 @@
                 left: 80%; /* Adjust the horizontal position as needed */
         }
 
-        /* AUDIO PLAYER MAIN REEL - CSS for the audio player */
-        /* Style for the custom audio player */
-        .custom-audio-player {
+        /* SIMPLE PLAYLIST - Styles for the simple button */
+        .simple-button {
+            position: absolute;
+            left: 10%; /* Adjust the left position as needed */
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%; /* Adjust the button width as needed */
             text-align: center;
-            margin-top: 20px;
         }
-
-        /* Style the audio player controls */
-        .custom-audio-player audio {
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-
-        /* Hide default audio player controls */
-        .custom-audio-player audio::-webkit-media-controls {
-            display: none;
-        }
-
-        /* Style your custom play/pause button */
-        .custom-audio-player .play-pause-button {
-            background-color: #566574;
-            color: white;
+        
+        .simple-button button {
+            background: transparent;
+            border: 2px solid white;
             padding: 10px 20px;
-            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            border-radius: 0; /* Remove button border radius */
             cursor: pointer;
+            outline: none; /* Remove focus outline */
         }
-
-        .custom-audio-player .play-pause-button:hover {
-            background-color: #34495e;
+        
+        .simple-button button:hover {
+            background: white;
+            color: #333; /* Change text color on hover */
         }
 
     </style>
@@ -366,20 +360,9 @@
                 <source src="video2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-               <!-- Custom Audio Player -->
-            <div class="custom-audio-player">
-                <audio id="audio" controls>
-                    <!-- MP3 format (commonly supported) -->
-                    <source src="audio1.mp3" type="audio/mpeg">
-                    <!-- OGG format (for Firefox and older browsers) -->
-                    <source src="audio1.ogg" type="audio/ogg">
-                    <!-- Add similar source elements for your other audio files -->
-                    <source src="audio2.mp3" type="audio/mpeg">
-                    <source src="audio2.ogg" type="audio/ogg">
-                    <!-- Add sources for all 16 audio files -->
-                    <!-- Fallback message for unsupported browsers -->
-                    Your browser does not support the audio element.
-                </audio>
+            <!-- Simple Button Playlist -->
+            <div class="simple-button">
+                <button>Playlist</button>
             </div>
         </div>
         <div class="section" data-anchor="section3">
@@ -478,34 +461,6 @@
         startButton.addEventListener('mouseout', () => {
           customCursor.style.border = '2px solid white'; /* Reset cursor border color to white */
         });
-
-
-        // AUDIO PLAYER - Function
-        document.addEventListener('DOMContentLoaded', function () {
-            const audio = document.getElementById('audio');
-            const playPauseButton = document.querySelector('.play-pause-button');
-        
-            // Play/Pause Button Click Event
-            playPauseButton.addEventListener('click', function () {
-                if (audio.paused) {
-                    audio.play();
-                } else {
-                    audio.pause();
-                }
-            });
-        
-            // Update Play/Pause Button State
-            audio.addEventListener('play', function () {
-                playPauseButton.textContent = 'Pause';
-            });
-        
-            audio.addEventListener('pause', function () {
-                playPauseButton.textContent = 'Play';
-            });
-        });
-
-
-        
     </script>
 </body>
 </html>
