@@ -370,36 +370,40 @@
         });
     </script>
     <script>
-         const customCursor = document.querySelector('.custom-cursor');
+        // JavaScript to update the custom cursor position and color
+        const customCursor = document.querySelector('.custom-cursor');
 
         document.addEventListener('mousemove', (e) => {
-          const x = e.clientX;
-          const y = e.clientY;
+            const elementUnderCursor = document.elementFromPoint(e.clientX, e.clientY);
 
-          // Update the cursor's position
-          customCursor.style.left = `${x}px`;
-          customCursor.style.top = `${y}px`;
+            // Check if the element under the cursor has a background color
+            if (elementUnderCursor && window.getComputedStyle(elementUnderCursor).backgroundColor) {
+                const bgColor = window.getComputedStyle(elementUnderCursor).backgroundColor;
 
-          // Get the color of the element beneath the cursor
-          const elementBeneathCursor = document.elementFromPoint(x, y);
-          if (elementBeneathCursor) {
-            const bgColor = getComputedStyle(elementBeneathCursor).backgroundColor;
+                // Calculate the chromatic opposite color
+                const oppositeColor = calculateChromaticOpposite(bgColor);
+
+                // Update the cursor's background color
+                customCursor.style.backgroundColor = oppositeColor;
+            }
     
-            // Calculate the opposite color (complement)
-            const oppositeColor = getOppositeColor(bgColor);
-    
-            // Update the cursor's border color to the opposite color
-            customCursor.style.borderColor = oppositeColor;
-          }
+            // Update the cursor position
+            customCursor.style.left = e.clientX + 'px';
+            customCursor.style.top = e.clientY + 'px';
         });
 
-        // Function to calculate the opposite color (complement)
-        function getOppositeColor(color) {
-          const rgb = color.match(/\d+/g);
-          const r = 255 - parseInt(rgb[0]);
-          const g = 255 - parseInt(rgb[1]);
-          const b = 255 - parseInt(rgb[2]);
-          return `rgb(${r}, ${g}, ${b})`;
+        // Function to calculate the chromatic opposite color
+        function calculateChromaticOpposite(color) {
+            const rgbValues = color.match(/\d+/g);
+            if (!rgbValues) return 'red'; // Default color in case of an error
+
+            // Calculate the inverted (complementary) color
+            const invertedRGB = rgbValues.map(value => 255 - parseInt(value));
+
+            // Convert RGB values to a CSS color string
+            const oppositeColor = `rgb(${invertedRGB.join(',')})`;
+
+            return oppositeColor;
         }
     </script>
 </body>
