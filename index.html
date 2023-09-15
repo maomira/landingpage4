@@ -363,6 +363,18 @@
             <!-- Simple Button Playlist -->
             <div class="simple-button">
                 <button>Playlist</button>
+                <audio controls>
+                    <!-- MP3 format (commonly supported) -->
+                    <source src="audio1.mp3" type="audio/mpeg">
+                    <!-- OGG format (for Firefox and older browsers) -->
+                    <source src="audio1.ogg" type="audio/ogg">
+                    <!-- Add similar source elements for your other audio files -->
+                    <!-- <source src="audio2.mp3" type="audio/mpeg">
+                    <source src="audio2.ogg" type="audio/ogg">
+                    ... -->
+                    <!-- Fallback message for unsupported browsers -->
+                    Your browser does not support the audio element.
+                </audio>
             </div>
         </div>
         <div class="section" data-anchor="section3">
