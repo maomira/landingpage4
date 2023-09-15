@@ -161,7 +161,7 @@
             position: absolute;
             top: 50%; /* Center vertically */
             left: 50%; /* Center horizontally */
-            transform: translate(-50%, -50%); /* Center the button precisely */
+            transform: translate(-50%, -50%) scale(1); /* Center the button precisely and set initial scale */
             background-color: white;
             border-radius: 100%; /* Make it a full circle */
             width: 70px; /* Adjust the width and height for the size of the circle */
@@ -169,15 +169,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transform-origin: center center; /* Center the transformation at the center of the button */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
             z-index: 3; /* Ensure it appears above other content */
             transition: transform 0.3s ease; /* Adjust the duration and easing as needed */
-            
         }
-        
+
         .start-button:hover {
-            transform: scale(1.1); /* Adjust the scale factor to control the button's growth */
+            transform: translate(-50%, -50%) scale(1.1); /* Adjust the scale factor to control the button's growth */
         }
 
         .start-button button {
