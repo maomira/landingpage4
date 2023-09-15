@@ -302,6 +302,26 @@
             background: transparent !important;
         }
 
+        /* Target the play/pause button in the audio player */
+        .simple-button audio::-webkit-media-controls-play-button,
+        .simple-button audio::-webkit-media-controls-pause-button,
+        .simple-button audio::-webkit-media-controls-start-playback-button {
+            color: red; /* Change the color to red */
+        }
+        
+        /* For Firefox */
+        .simple-button audio::-moz-media-controls-play-button,
+        .simple-button audio::-moz-media-controls-pause-button {
+            color: red; /* Change the color to red */
+        }
+        
+        /* For Edge */
+        .simple-button audio::-ms-media-controls-play,
+        .simple-button audio::-ms-media-controls-pause {
+            color: red; /* Change the color to red */
+        }
+
+
     </style>
 </head>
     
