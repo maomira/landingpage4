@@ -416,14 +416,47 @@
         });
 
         
-        // MOUSE - JavaScript to update the custom cursor position
+        // MOUSE - JavaScript to update the custom cursor position and color
         const customCursor = document.querySelector('.custom-cursor');
-
+        let isHoveringStartButton = false; // Track if cursor is hovering over the start button
+        
         document.addEventListener('mousemove', (e) => {
+          const elementUnderCursor = document.elementFromPoint(e.clientX, e.clientY);
+        
+          // Check if the element under the cursor has a background color
+          if (elementUnderCursor && window.getComputedStyle(elementUnderCursor).backgroundColor) {
+            const bgColor = window.getComputedStyle(elementUnderCursor).backgroundColor;
+        
+            if (isHoveringStartButton) {
+              // Change the cursor's background color to black when hovering over the start button
+              customCursor.style.backgroundColor = 'black';
+            } else {
+              // Calculate the chromatic opposite color for other elements
+              const oppositeColor = calculateChromaticOpposite(bgColor);
+              customCursor.style.backgroundColor = oppositeColor;
+            }
+          } else {
+            // Reset cursor's background color when not hovering over an element with a background
+            customCursor.style.backgroundColor = '';
+          }
+        
           // Update the cursor position
           customCursor.style.left = e.clientX + 'px';
           customCursor.style.top = e.clientY + 'px';
         });
+        
+        // Handle hover event for the start button
+        const startButton = document.querySelector('.start-button');
+        startButton.addEventListener('mouseover', () => {
+          isHoveringStartButton = true;
+          customCursor.style.backgroundColor = 'black'; // Change cursor color to black
+        });
+        
+        startButton.addEventListener('mouseout', () => {
+          isHoveringStartButton = false;
+          customCursor.style.backgroundColor = ''; // Reset cursor color
+        });
+
         
     </script>
 </body>
