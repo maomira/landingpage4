@@ -272,27 +272,23 @@
           width: 100%; /* Set the width to 100% to make it responsive */
           max-width: 400px; /* Set a maximum width to control the size */
           margin: 0 auto; /* Center-align the audio player horizontally */
+          padding: 10px; /* Add padding for spacing */
+          border: 2px solid #333; /* Add a border for visual distinction */
+          border-radius: 5px; /* Add rounded corners */
+          background-color: #f1f1f1; /* Set a background color */
         }
         
         .audio-player audio {
           width: 100%; /* Set the width of the audio element to 100% */
           height: auto; /* Automatically adjust the height based on the aspect ratio of the audio */
-          background-color: #f1f1f1; /* Set a background color */
-          border: 2px solid #333; /* Add a border for visual distinction */
-          border-radius: 5px; /* Add rounded corners */
+          display: block; /* Ensure the audio element is a block-level element */
+          border: none; /* Remove any border on the audio element */
+          background-color: transparent; /* Make the audio element background transparent */
+          outline: none; /* Remove focus outline */
         }
         
         .audio-player audio::-webkit-media-controls-panel {
-          background-color: #333; /* Customize the background of the control panel for Webkit browsers (Chrome, Safari) */
-          color: white; /* Customize the text color for control buttons */
-          border-radius: 5px; /* Add rounded corners */
-        }
-        
-        /* Style the control buttons (play, pause, volume, etc.) */
-        .audio-player audio::-webkit-media-controls-play-button,
-        .audio-player audio::-webkit-media-controls-pause-button,
-        .audio-player audio::-webkit-media-controls-volume-slider {
-          color: white; /* Customize the color of the control buttons */
+          display: none; /* Hide the default control panel for Webkit browsers (Chrome, Safari) */
         }
 
     </style>
