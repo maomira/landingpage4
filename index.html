@@ -291,11 +291,7 @@
                 <span class="button-text">Scroll down</span>
                 <i class="fas fa-arrow-down"></i>
             </button>
-            <button class="scroll-down-button animate__animated animate__slideInDown animate__slower animate__delay-1s" onclick="scrollToSection('section2')">
-                <span class="button-text">Scroll down</span>
-                <i class="fas fa-arrow-down"></i>
-            </button>
-            <div class="start-button">
+            <div class="start-button" onclick="scrollToSection('section2')">
                 <button>Start</button>
             </div>
             <!-- New button with quote -->
@@ -432,16 +428,6 @@
         
         startButton.addEventListener('mouseout', () => {
           customCursor.style.border = '2px solid white'; /* Reset cursor border color to white */
-        });
-
-        // START BUTTON - Function for clicking on it
-        // Find the Start button element
-        const startButton = document.querySelector('.start-button');
-
-        // Add a click event listener to the Start button
-        startButton.addEventListener('click', () => {
-            // Use fullPage.js API to scroll to the next section
-            fullpage_api.moveSectionDown();
         });
 
         
