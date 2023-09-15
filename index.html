@@ -269,30 +269,6 @@
         }
 
         /* SIMPLE PLAYLIST - Styles for the simple button */
-        .simple-button {
-            position: absolute;
-            left: 10%; /* Adjust the left position as needed */
-            top: 50%;
-            transform: translateY(-50%);
-            width: 45%; /* Adjust the button width as needed */
-            text-align: center;
-        }
-        
-        .simple-button button {
-            background: transparent;
-            border: 2px solid white;
-            padding: 10px 20px;
-            color: white;
-            font-size: 16px;
-            border-radius: 0; /* Remove button border radius */
-            cursor: pointer;
-            outline: none; /* Remove focus outline */
-        }
-        
-        .simple-button button:hover {
-            background: white;
-            color: #333; /* Change text color on hover */
-        }
 
         /* Remove default play button styles for all browsers */
         .simple-button audio::-webkit-media-controls-play-button,
@@ -430,25 +406,22 @@
                 <source src="video2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <!-- Simple Button Playlist -->
-            <div class="simple-button">
-                <button>Playlist</button>
-                <audio controls>
-                    <!-- MP3 format (commonly supported) -->
-                    <source src="audio1.mp3" type="audio/mpeg">
-                    <!-- OGG format (for Firefox and older browsers) -->
-                    <source src="audio1.ogg" type="audio/ogg">
-                    <!-- Add similar source elements for your other audio files -->
-                    <!-- <source src="audio2.mp3" type="audio/mpeg">
-                    <source src="audio2.ogg" type="audio/ogg">
-                    ... -->
-                    <!-- Fallback message for unsupported browsers -->
-                    Your browser does not support the audio element.
-                </audio>
-                  <button class="custom-play-button" onclick="playAudio()">
-                    Play
-                  </button>
-            </div>
+        <!-- Simple Button Playlist -->
+            <audio controls>
+                <!-- MP3 format (commonly supported) -->
+                <source src="audio1.mp3" type="audio/mpeg">
+                <!-- OGG format (for Firefox and older browsers) -->
+                <source src="audio1.ogg" type="audio/ogg">
+                <!-- Add similar source elements for your other audio files -->
+                <!-- <source src="audio2.mp3" type="audio/mpeg">
+                <source src="audio2.ogg" type="audio/ogg">
+                ... -->
+                <!-- Fallback message for unsupported browsers -->
+                Your browser does not support the audio element.
+            </audio>
+              <button class="custom-play-button" onclick="playAudio()">
+                Play
+              </button>
         </div>
         <div class="section" data-anchor="section3">
             <video class="background-video" autoplay loop muted>
